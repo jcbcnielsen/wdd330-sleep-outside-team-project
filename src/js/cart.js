@@ -2,8 +2,16 @@ import { getLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
+  if (!cartItems) {
+    return
+  }
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
+
+  document.querySelector(".hide").classList.remove("hide");
+  const total = document.querySelector(".calculated-total");
+  total.textContent = `$${calculateCartTotal(cartItems)}`
+
 }
 
 function cartItemTemplate(item) {
@@ -23,6 +31,17 @@ function cartItemTemplate(item) {
 </li>`;
 
   return newItem;
+}
+
+function calculateCartTotal(items) {
+
+  let total = 0;
+  for (var i of items) {
+    total += i.FinalPrice;
+  }
+
+  return total;
+
 }
 
 renderCartContents();
