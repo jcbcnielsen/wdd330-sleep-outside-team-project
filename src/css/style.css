@@ -271,6 +271,15 @@ footer {
   padding-top: 16px;
 }
 
+.hide {
+  visibility: hidden;
+}
+
+.cart-footer {
+  text-align: center;
+  padding-top: 16px;
+}
+
 /* Products List (main page) */
 
 .product-grid {
