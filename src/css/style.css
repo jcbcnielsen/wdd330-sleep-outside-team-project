@@ -270,3 +270,24 @@ footer {
   text-align: center;
   padding-top: 16px;
 }
+
+/* Products List (main page) */
+
+.product-grid {
+  display: flex;
+  /* flex-flow: row wrap; */
+  list-style-type: none;
+  justify-content: center;
+  gap: 50px;
+  padding: 25px;
+
+}
+
+.product-grid a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+
+.product-grid h2 {
+  text-align: center;
+}
