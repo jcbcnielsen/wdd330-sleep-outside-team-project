@@ -15,6 +15,9 @@ function renderCartContents() {
 }
 
 function cartItemTemplate(item) {
+  if (!item) {
+    return
+  }
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
@@ -36,10 +39,10 @@ function cartItemTemplate(item) {
 function calculateCartTotal(items) {
 
   let total = 0;
-  for (var i of items) {
-    total += i.FinalPrice;
+  for (const i of (items || [])) {
+    if (!i || i.FinalPrice == null) continue;
+    total += Number(i.FinalPrice) || 0;
   }
-
   return total;
 
 }
