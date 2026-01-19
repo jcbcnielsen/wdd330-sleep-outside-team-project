@@ -1,8 +1,8 @@
 import { getLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
-  const cartItems = getLocalStorage("so-cart");
-  if (!cartItems) {
+  const cartItems = getLocalStorage("so-cart") || [];
+  if (!cartItems || cartItems.length === 0) {
     return
   }
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
