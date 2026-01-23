@@ -31,6 +31,7 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
   }
 
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
 // retrieve a parameter from the url
 export function getParam(param) {
   const queryString = window.location.search;
