@@ -29,9 +29,9 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
   if (clear) {
     parentElement.innerHTML = '';
   }
-
-  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
+
+parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 // retrieve a parameter from the url
 export function getParam(param) {
   const queryString = window.location.search;
