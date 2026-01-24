@@ -3,8 +3,8 @@ import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
 loadHeaderFooter();
 
 function renderCartContents() {
-  const cartItems = getLocalStorage("so-cart");
-  if (!cartItems) {
+  const cartItems = getLocalStorage("so-cart") || [];
+  if (!cartItems || cartItems.length === 0) {
     return
   }
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
